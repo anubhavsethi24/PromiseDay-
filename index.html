@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Promise Day</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Floating hearts background -->
+    <div class="heart-bg"></div>
+
+    <!-- Custom cursor hearts -->
+    <div id="heart-trail-container"></div>
+
+    <!-- Hero section -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Happy Promise Day Biloti 😼❤️</h1>
+            <p class="subtitle">A little interactive surprise, just for you.</p>
+            <div class="hero-inputs">
+                <input id="yourName" type="text" placeholder="Their name" />
+                <input id="theirName" type="text" placeholder="Your name" />
+                <button id="startBtn">Start the Journey</button>
+            </div>
+            <p class="scroll-hint">Scroll down to see the promises ↓</p>
+        </div>
+    </header>
+
+    <!-- Timeline / promises section -->
+    <section class="section" id="promises">
+        <h2>Our Promises</h2>
+        <p class="section-subtitle">Tap a card to flip and reveal the promise.</p>
+        <div class="promise-grid">
+            <!-- Each card is easy to edit -->
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">🌞</span>
+                        <h3>Good Morning Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to text you good morning and good night, no matter how busy the day is.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">🎧</span>
+                        <h3>Support Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to listen to you, even when you’re quiet, and be there without judging.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">🍕</span>
+                        <h3>Food Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to share the last slice, the last fry, and the best bites with you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">🌍</span>
+                        <h3>Future Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to dream with you, plan with you, and build a beautiful future together.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">📸</span>
+                        <h3>Photo Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to take a photo of us together every possible day, even if it's just a quick snap.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">😂</span>
+                        <h3>Laughter Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to make you laugh on your bad days and laugh even harder on the good ones.</p>
+                    </div>
+                </div>
+            </div>
+
+<div class="promise-card">
+    <div class="card-inner">
+        <div class="card-front">
+            <span class="card-icon">💕</span>
+            <h3>Love Promise</h3>
+        </div>
+        <div class="card-back">
+            <p>I promise to always be there for you, even when you pushes me away, and love you no matter what.</p>
+        </div>
+    </div>
+</div>
+
+            <div class="promise-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-icon">🤝</span>
+                        <h3>Always Promise</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>I promise to stay by your side, in every chapter, every plot twist, every happy ending.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive quiz / Q&A section -->
+    <section class="section alt" id="quiz">
+        <h2>Little Promise Quiz</h2>
+        <p class="section-subtitle">Answer these, and unlock a special message.</p>
+
+        <div class="quiz-container">
+            <div class="quiz-item">
+                <label>1. Our favorite thing to do together is:</label>
+                <input type="text" id="q1" placeholder="Type your cute answer..." />
+            </div>
+            <div class="quiz-item">
+                <label>2. One place we must visit together:</label>
+                <input type="text" id="q2" placeholder="Your dream place..." />
+            </div>
+            <div class="quiz-item">
+                <label>3. One promise you want from me:</label>
+                <input type="text" id="q3" placeholder="Write your promise wish..." />
+            </div>
+            <button id="revealMsgBtn">Reveal Special Message</button>
+
+            <div id="specialMessage" class="hidden">
+                <h3>My Promise to You 💌</h3>
+                <p class="special-text">
+                    No matter what your answers are, my promise is simple: I will always choose you, every single day.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider / gallery of notes -->
+    <section class="section" id="notes">
+        <h2>Tiny Notes for You</h2>
+        <p class="section-subtitle">Click the arrows to slide through the notes.</p>
+
+        <div class="slider">
+            <button class="nav-btn" id="prevNote">◀</button>
+            <div class="note-display">
+                <p id="noteText"></p>
+            </div>
+            <button class="nav-btn" id="nextNote">▶</button>
+        </div>
+    </section>
+
+    <!-- Final ask section -->
+    <section class="section alt" id="final">
+        <h2>One Last Promise Question</h2>
+        <p class="section-subtitle">Ready for the big one?</p>
+
+        <div class="final-card">
+            <p id="finalQuestionText">
+                Will you let me keep making a thousand tiny promises and keep them, every single day?
+            </p>
+            <div class="final-buttons">
+                <button id="yesBtn">Yes ✅</button>
+                <button id="noBtn">No ❌</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confetti container -->
+    <div id="confetti-container"></div>
+
+<!-- Background music controls -->
+<section class="music-section">
+    <audio id="bgMusic" loop>
+        <!-- Replace src with your own mp3 path -->
+        <source src="music/promise-day-song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="musicToggleBtn" class="music-btn">
+        🎵 Play Music
+    </button>
+    <span id="musicStatus" class="music-status">Music is off</span>
+</section>
+
+<!-- Smooth scroll nav (existing) -->
+<nav class="bottom-nav">
+    ...
+</nav>
+
+
+    <!-- Smooth scroll nav (optional, can remove) -->
+    <nav class="bottom-nav">
+        <a href="#hero">Top</a>
+        <a href="#promises">Promises</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#notes">Notes</a>
+        <a href="#final">Final</a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

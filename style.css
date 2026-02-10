@@ -1,0 +1,462 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #ffdde1, #ee9ca7);
+    min-height: 100vh;
+    color: #2d1b2d;
+    overflow-x: hidden;
+}
+
+/* Floating hearts background */
+.heart-bg::before,
+.heart-bg::after {
+    content: "❤ ❤ ❤ ❤ ❤ ❤ ❤";
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.3);
+    animation: floatHearts 15s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart-bg::after {
+    top: 50%;
+    animation-duration: 20s;
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem 2.5rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    animation: fadeUp 1.2s ease-out;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.hero-inputs input {
+    padding: 0.6rem 0.9rem;
+    border-radius: 999px;
+    border: none;
+    min-width: 160px;
+    outline: none;
+}
+
+.hero-inputs button {
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    background: #ff758c;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(255, 117, 140, 0.6);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-inputs button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(255, 117, 140, 0.8);
+}
+
+.scroll-hint {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.section.alt {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Promise cards */
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.promise-card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+}
+
+.promise-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-front h3 {
+    font-size: 1.1rem;
+}
+
+/* Quiz */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background: #ffeef4;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.quiz-item+.quiz-item {
+    margin-top: 1rem;
+}
+
+.quiz-item label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.quiz-item input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid #ffb6c1;
+    outline: none;
+}
+
+#revealMsgBtn {
+    margin-top: 1.2rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    background: #ff758c;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+}
+
+#specialMessage {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    background: #fff;
+    animation: fadeUp 0.6s ease-out;
+}
+
+.special-text {
+    margin-top: 0.4rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.note-display {
+    flex: 1;
+    min-height: 120px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-btn {
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Final section */
+.final-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffeef4;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.final-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.final-buttons button {
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#yesBtn {
+    background: #5ad18a;
+    color: #fff;
+}
+
+#noBtn {
+    background: #ff7675;
+    color: #fff;
+    position: relative;
+}
+
+/* Confetti */
+#confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    font-size: 1.4rem;
+    animation: confetti-fall linear 4s forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-10%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* Heart cursor trail */
+#heart-trail-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.cursor-heart {
+    position: absolute;
+    color: #ff4b6e;
+    font-size: 1.1rem;
+    animation: heartTrail 0.8s ease-out forwards;
+}
+
+@keyframes heartTrail {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-30px) scale(0.2);
+        opacity: 0;
+    }
+}
+
+/* Bottom nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    display: flex;
+    gap: 0.6rem;
+    z-index: 1001;
+}
+
+.bottom-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    transition: background 0.15s ease;
+}
+
+.bottom-nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .slider {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+.music-section {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 1002;
+}
+
+.music-btn {
+    border: none;
+    background: #ff758c;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.music-status {
+    font-size: 0.75rem;
+    color: #fff;
+}
+
+}
